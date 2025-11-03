@@ -1,0 +1,1051 @@
+{
+  "nodes": [
+    {
+      "name": "mitotic cell cycle",
+      "id": "GO:0000278",
+      "depth": 0
+    },
+    {
+      "name": "cell morphogenesis",
+      "id": "GO:0000902",
+      "depth": 0
+    },
+    {
+      "name": "immune system development",
+      "id": "GO:0002520",
+      "depth": 0
+    },
+    {
+      "name": "muscle system process",
+      "id": "GO:0003012",
+      "depth": 0
+    },
+    {
+      "name": "DNA binding",
+      "id": "GO:0003677",
+      "depth": 0
+    },
+    {
+      "name": "chromatin binding",
+      "id": "GO:0003682",
+      "depth": 0
+    },
+    {
+      "name": "RNA binding",
+      "id": "GO:0003723",
+      "depth": 0
+    },
+    {
+      "name": "structural constituent of ribosome",
+      "id": "GO:0003735",
+      "depth": 0
+    },
+    {
+      "name": "nuclease activity",
+      "id": "GO:0004518",
+      "depth": 0
+    },
+    {
+      "name": "extracellular matrix structural constituent",
+      "id": "GO:0005201",
+      "depth": 0
+    },
+    {
+      "name": "extracellular space",
+      "id": "GO:0005615",
+      "depth": 0
+    },
+    {
+      "name": "nucleus",
+      "id": "GO:0005634",
+      "depth": 0
+    },
+    {
+      "name": "chromosome",
+      "id": "GO:0005694",
+      "depth": 0
+    },
+    {
+      "name": "mitochondrion",
+      "id": "GO:0005739",
+      "depth": 0
+    },
+    {
+      "name": "endosome",
+      "id": "GO:0005768",
+      "depth": 0
+    },
+    {
+      "name": "vacuole",
+      "id": "GO:0005773",
+      "depth": 0
+    },
+    {
+      "name": "peroxisome",
+      "id": "GO:0005777",
+      "depth": 0
+    },
+    {
+      "name": "endoplasmic reticulum",
+      "id": "GO:0005783",
+      "depth": 0
+    },
+    {
+      "name": "Golgi apparatus",
+      "id": "GO:0005794",
+      "depth": 0
+    },
+    {
+      "name": "cytosol",
+      "id": "GO:0005829",
+      "depth": 0
+    },
+    {
+      "name": "cytoskeleton",
+      "id": "GO:0005856",
+      "depth": 0
+    },
+    {
+      "name": "plasma membrane",
+      "id": "GO:0005886",
+      "depth": 0
+    },
+    {
+      "name": "cilium",
+      "id": "GO:0005929",
+      "depth": 0
+    },
+    {
+      "name": "carbohydrate metabolic process",
+      "id": "GO:0005975",
+      "depth": 0
+    },
+    {
+      "name": "alcohol metabolic process",
+      "id": "GO:0006066",
+      "depth": 0
+    },
+    {
+      "name": "pyruvate metabolic process",
+      "id": "GO:0006090",
+      "depth": 0
+    },
+    {
+      "name": "generation of precursor metabolites and energy",
+      "id": "GO:0006091",
+      "depth": 0
+    },
+    {
+      "name": "DNA replication",
+      "id": "GO:0006260",
+      "depth": 0
+    },
+    {
+      "name": "DNA recombination",
+      "id": "GO:0006310",
+      "depth": 0
+    },
+    {
+      "name": "DNA-templated transcription",
+      "id": "GO:0006351",
+      "depth": 0
+    },
+    {
+      "name": "regulation of DNA-templated transcription",
+      "id": "GO:0006355",
+      "depth": 0
+    },
+    {
+      "name": "RNA processing",
+      "id": "GO:0006396",
+      "depth": 0
+    },
+    {
+      "name": "tRNA metabolic process",
+      "id": "GO:0006399",
+      "depth": 0
+    },
+    {
+      "name": "RNA localization",
+      "id": "GO:0006403",
+      "depth": 0
+    },
+    {
+      "name": "translation",
+      "id": "GO:0006412",
+      "depth": 0
+    },
+    {
+      "name": "protein lipidation",
+      "id": "GO:0006497",
+      "depth": 0
+    },
+    {
+      "name": "amino acid metabolic process",
+      "id": "GO:0006520",
+      "depth": 0
+    },
+    {
+      "name": "modified amino acid metabolic process",
+      "id": "GO:0006575",
+      "depth": 0
+    },
+    {
+      "name": "polyamine metabolic process",
+      "id": "GO:0006595",
+      "depth": 0
+    },
+    {
+      "name": "lipid metabolic process",
+      "id": "GO:0006629",
+      "depth": 0
+    },
+    {
+      "name": "ubiquinone biosynthetic process",
+      "id": "GO:0006744",
+      "depth": 0
+    },
+    {
+      "name": "vitamin metabolic process",
+      "id": "GO:0006766",
+      "depth": 0
+    },
+    {
+      "name": "sulfur compound metabolic process",
+      "id": "GO:0006790",
+      "depth": 0
+    },
+    {
+      "name": "monoatomic ion transport",
+      "id": "GO:0006811",
+      "depth": 0
+    },
+    {
+      "name": "mitochondrial transport",
+      "id": "GO:0006839",
+      "depth": 0
+    },
+    {
+      "name": "lipid transport",
+      "id": "GO:0006869",
+      "depth": 0
+    },
+    {
+      "name": "nucleocytoplasmic transport",
+      "id": "GO:0006913",
+      "depth": 0
+    },
+    {
+      "name": "autophagy",
+      "id": "GO:0006914",
+      "depth": 0
+    },
+    {
+      "name": "response to stress",
+      "id": "GO:0006950",
+      "depth": 0
+    },
+    {
+      "name": "immune response",
+      "id": "GO:0006955",
+      "depth": 0
+    },
+    {
+      "name": "nucleus organization",
+      "id": "GO:0006997",
+      "depth": 0
+    },
+    {
+      "name": "mitochondrion organization",
+      "id": "GO:0007005",
+      "depth": 0
+    },
+    {
+      "name": "cytoskeleton organization",
+      "id": "GO:0007010",
+      "depth": 0
+    },
+    {
+      "name": "microtubule-based movement",
+      "id": "GO:0007018",
+      "depth": 0
+    },
+    {
+      "name": "peroxisome organization",
+      "id": "GO:0007031",
+      "depth": 0
+    },
+    {
+      "name": "vacuole organization",
+      "id": "GO:0007033",
+      "depth": 0
+    },
+    {
+      "name": "chromosome segregation",
+      "id": "GO:0007059",
+      "depth": 0
+    },
+    {
+      "name": "cell adhesion",
+      "id": "GO:0007155",
+      "depth": 0
+    },
+    {
+      "name": "establishment or maintenance of cell polarity",
+      "id": "GO:0007163",
+      "depth": 0
+    },
+    {
+      "name": "cell surface receptor signaling pathway",
+      "id": "GO:0007166",
+      "depth": 0
+    },
+    {
+      "name": "G protein-coupled receptor signaling pathway",
+      "id": "GO:0007186",
+      "depth": 0
+    },
+    {
+      "name": "gastrulation",
+      "id": "GO:0007369",
+      "depth": 0
+    },
+    {
+      "name": "pattern specification process",
+      "id": "GO:0007389",
+      "depth": 0
+    },
+    {
+      "name": "nervous system development",
+      "id": "GO:0007399",
+      "depth": 0
+    },
+    {
+      "name": "sensory organ development",
+      "id": "GO:0007423",
+      "depth": 0
+    },
+    {
+      "name": "salivary gland development",
+      "id": "GO:0007431",
+      "depth": 0
+    },
+    {
+      "name": "mesoderm development",
+      "id": "GO:0007498",
+      "depth": 0
+    },
+    {
+      "name": "sensory perception",
+      "id": "GO:0007600",
+      "depth": 0
+    },
+    {
+      "name": "circadian rhythm",
+      "id": "GO:0007623",
+      "depth": 0
+    },
+    {
+      "name": "locomotory behavior",
+      "id": "GO:0007626",
+      "depth": 0
+    },
+    {
+      "name": "chitin binding",
+      "id": "GO:0008061",
+      "depth": 0
+    },
+    {
+      "name": "cytoskeletal protein binding",
+      "id": "GO:0008092",
+      "depth": 0
+    },
+    {
+      "name": "intracellular protein localization",
+      "id": "GO:0008104",
+      "depth": 0
+    },
+    {
+      "name": "transcription factor binding",
+      "id": "GO:0008134",
+      "depth": 0
+    },
+    {
+      "name": "cell population proliferation",
+      "id": "GO:0008283",
+      "depth": 0
+    },
+    {
+      "name": "lipid binding",
+      "id": "GO:0008289",
+      "depth": 0
+    },
+    {
+      "name": "glycoprotein metabolic process",
+      "id": "GO:0009100",
+      "depth": 0
+    },
+    {
+      "name": "response to external stimulus",
+      "id": "GO:0009605",
+      "depth": 0
+    },
+    {
+      "name": "endomembrane system organization",
+      "id": "GO:0010256",
+      "depth": 0
+    },
+    {
+      "name": "miRNA metabolic process",
+      "id": "GO:0010586",
+      "depth": 0
+    },
+    {
+      "name": "programmed cell death",
+      "id": "GO:0012501",
+      "depth": 0
+    },
+    {
+      "name": "cell growth",
+      "id": "GO:0016049",
+      "depth": 0
+    },
+    {
+      "name": "mRNA metabolic process",
+      "id": "GO:0016071",
+      "depth": 0
+    },
+    {
+      "name": "rRNA metabolic process",
+      "id": "GO:0016072",
+      "depth": 0
+    },
+    {
+      "name": "snRNA metabolic process",
+      "id": "GO:0016073",
+      "depth": 0
+    },
+    {
+      "name": "sno(s)RNA metabolic process",
+      "id": "GO:0016074",
+      "depth": 0
+    },
+    {
+      "name": "vesicle-mediated transport",
+      "id": "GO:0016192",
+      "depth": 0
+    },
+    {
+      "name": "oxidoreductase activity",
+      "id": "GO:0016491",
+      "depth": 0
+    },
+    {
+      "name": "transferase activity",
+      "id": "GO:0016740",
+      "depth": 0
+    },
+    {
+      "name": "hydrolase activity",
+      "id": "GO:0016787",
+      "depth": 0
+    },
+    {
+      "name": "lyase activity",
+      "id": "GO:0016829",
+      "depth": 0
+    },
+    {
+      "name": "isomerase activity",
+      "id": "GO:0016853",
+      "depth": 0
+    },
+    {
+      "name": "ligase activity",
+      "id": "GO:0016874",
+      "depth": 0
+    },
+    {
+      "name": "cell junction",
+      "id": "GO:0030054",
+      "depth": 0
+    },
+    {
+      "name": "coated vesicle",
+      "id": "GO:0030135",
+      "depth": 0
+    },
+    {
+      "name": "cell differentiation",
+      "id": "GO:0030154",
+      "depth": 0
+    },
+    {
+      "name": "protein catabolic process",
+      "id": "GO:0030163",
+      "depth": 0
+    },
+    {
+      "name": "extracellular matrix organization",
+      "id": "GO:0030198",
+      "depth": 0
+    },
+    {
+      "name": "enzyme regulator activity",
+      "id": "GO:0030234",
+      "depth": 0
+    },
+    {
+      "name": "carbohydrate binding",
+      "id": "GO:0030246",
+      "depth": 0
+    },
+    {
+      "name": "external encapsulating structure",
+      "id": "GO:0030312",
+      "depth": 0
+    },
+    {
+      "name": "cytoskeleton-dependent intracellular transport",
+      "id": "GO:0030705",
+      "depth": 0
+    },
+    {
+      "name": "regulatory ncRNA-mediated gene silencing",
+      "id": "GO:0031047",
+      "depth": 0
+    },
+    {
+      "name": "protein tag activity",
+      "id": "GO:0031386",
+      "depth": 0
+    },
+    {
+      "name": "intracellular signal transduction",
+      "id": "GO:0035556",
+      "depth": 0
+    },
+    {
+      "name": "signaling receptor activity",
+      "id": "GO:0038023",
+      "depth": 0
+    },
+    {
+      "name": "response to chemical",
+      "id": "GO:0042221",
+      "depth": 0
+    },
+    {
+      "name": "ribosome biogenesis",
+      "id": "GO:0042254",
+      "depth": 0
+    },
+    {
+      "name": "structural constituent of cuticle",
+      "id": "GO:0042302",
+      "depth": 0
+    },
+    {
+      "name": "molting cycle",
+      "id": "GO:0042303",
+      "depth": 0
+    },
+    {
+      "name": "cuticle development",
+      "id": "GO:0042335",
+      "depth": 0
+    },
+    {
+      "name": "histone binding",
+      "id": "GO:0042393",
+      "depth": 0
+    },
+    {
+      "name": "pigment metabolic process",
+      "id": "GO:0042440",
+      "depth": 0
+    },
+    {
+      "name": "multi-organism reproductive process",
+      "id": "GO:0044703",
+      "depth": 0
+    },
+    {
+      "name": "cilium organization",
+      "id": "GO:0044782",
+      "depth": 0
+    },
+    {
+      "name": "translation regulator activity",
+      "id": "GO:0045182",
+      "depth": 0
+    },
+    {
+      "name": "cell redox homeostasis",
+      "id": "GO:0045454",
+      "depth": 0
+    },
+    {
+      "name": "metal ion binding",
+      "id": "GO:0046872",
+      "depth": 0
+    },
+    {
+      "name": "receptor ligand activity",
+      "id": "GO:0048018",
+      "depth": 0
+    },
+    {
+      "name": "multicellular organismal reproductive process",
+      "id": "GO:0048609",
+      "depth": 0
+    },
+    {
+      "name": "cell motility",
+      "id": "GO:0048870",
+      "depth": 0
+    },
+    {
+      "name": "chemical homeostasis",
+      "id": "GO:0048878",
+      "depth": 0
+    },
+    {
+      "name": "synapse organization",
+      "id": "GO:0050808",
+      "depth": 0
+    },
+    {
+      "name": "cognition",
+      "id": "GO:0050890",
+      "depth": 0
+    },
+    {
+      "name": "unfolded protein binding",
+      "id": "GO:0051082",
+      "depth": 0
+    },
+    {
+      "name": "chromosome organization",
+      "id": "GO:0051276",
+      "depth": 0
+    },
+    {
+      "name": "cell division",
+      "id": "GO:0051301",
+      "depth": 0
+    },
+    {
+      "name": "meiotic cell cycle",
+      "id": "GO:0051321",
+      "depth": 0
+    },
+    {
+      "name": "protein maturation",
+      "id": "GO:0051604",
+      "depth": 0
+    },
+    {
+      "name": "transmembrane transport",
+      "id": "GO:0055085",
+      "depth": 0
+    },
+    {
+      "name": "nucleobase-containing small molecule metabolic process",
+      "id": "GO:0055086",
+      "depth": 0
+    },
+    {
+      "name": "molecular adaptor activity",
+      "id": "GO:0060090",
+      "depth": 0
+    },
+    {
+      "name": "epithelium development",
+      "id": "GO:0060429",
+      "depth": 0
+    },
+    {
+      "name": "respiratory system development",
+      "id": "GO:0060541",
+      "depth": 0
+    },
+    {
+      "name": "membrane organization",
+      "id": "GO:0061024",
+      "depth": 0
+    },
+    {
+      "name": "muscle structure development",
+      "id": "GO:0061061",
+      "depth": 0
+    },
+    {
+      "name": "protein-containing complex assembly",
+      "id": "GO:0065003",
+      "depth": 0
+    },
+    {
+      "name": "protein modification by small protein conjugation or removal",
+      "id": "GO:0070647",
+      "depth": 0
+    },
+    {
+      "name": "circulatory system development",
+      "id": "GO:0072359",
+      "depth": 0
+    },
+    {
+      "name": "secretory vesicle",
+      "id": "GO:0099503",
+      "depth": 0
+    },
+    {
+      "name": "synaptic signaling",
+      "id": "GO:0099536",
+      "depth": 0
+    },
+    {
+      "name": "molecular sensor activity",
+      "id": "GO:0140299",
+      "depth": 0
+    },
+    {
+      "name": "molecular sequestering activity",
+      "id": "GO:0140313",
+      "depth": 0
+    },
+    {
+      "name": "ATP-dependent activity",
+      "id": "GO:0140657",
+      "depth": 0
+    },
+    {
+      "name": "nucleolus",
+      "id": "GO:0005730",
+      "depth": 1
+    },
+    {
+      "name": "general transcription initiation factor activity",
+      "id": "GO:0140223",
+      "depth": 1
+    },
+    {
+      "name": "DNA-binding transcription factor activity",
+      "id": "GO:0003700",
+      "depth": 1
+    },
+    {
+      "name": "DNA repair",
+      "id": "GO:0006281",
+      "depth": 1
+    },
+    {
+      "name": "structural constituent of cytoskeleton",
+      "id": "GO:0005200",
+      "depth": 1
+    },
+    {
+      "name": "cargo receptor activity",
+      "id": "GO:0038024",
+      "depth": 1
+    },
+    {
+      "name": "methyltransferase activity",
+      "id": "GO:0008168",
+      "depth": 1
+    },
+    {
+      "name": "kinase activity",
+      "id": "GO:0016301",
+      "depth": 1
+    },
+    {
+      "name": "acyltransferase activity",
+      "id": "GO:0016746",
+      "depth": 1
+    },
+    {
+      "name": "glycosyltransferase activity",
+      "id": "GO:0016757",
+      "depth": 1
+    },
+    {
+      "name": "transferase activity, transferring alkyl or aryl (other than methyl) groups",
+      "id": "GO:0016765",
+      "depth": 1
+    },
+    {
+      "name": "phosphotransferase activity, alcohol group as acceptor",
+      "id": "GO:0016773",
+      "depth": 1
+    },
+    {
+      "name": "nucleotidyltransferase activity",
+      "id": "GO:0016779",
+      "depth": 1
+    },
+    {
+      "name": "GTPase activity",
+      "id": "GO:0003924",
+      "depth": 1
+    },
+    {
+      "name": "peptidase activity",
+      "id": "GO:0008233",
+      "depth": 1
+    },
+    {
+      "name": "lipase activity",
+      "id": "GO:0016298",
+      "depth": 1
+    },
+    {
+      "name": "phosphatase activity",
+      "id": "GO:0016791",
+      "depth": 1
+    },
+    {
+      "name": "hydrolase activity, acting on glycosyl bonds",
+      "id": "GO:0016798",
+      "depth": 1
+    },
+    {
+      "name": "hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds",
+      "id": "GO:0016810",
+      "depth": 1
+    },
+    {
+      "name": "carboxylic ester hydrolase activity",
+      "id": "GO:0052689",
+      "depth": 1
+    },
+    {
+      "name": "synapse",
+      "id": "GO:0045202",
+      "depth": 1
+    },
+    {
+      "name": "guanyl-nucleotide exchange factor activity",
+      "id": "GO:0005085",
+      "depth": 1
+    },
+    {
+      "name": "extracellular matrix",
+      "id": "GO:0031012",
+      "depth": 1
+    },
+    {
+      "name": "piRNA processing",
+      "id": "GO:0034587",
+      "depth": 1
+    },
+    {
+      "name": "protein folding",
+      "id": "GO:0006457",
+      "depth": 1
+    },
+    {
+      "name": "transmembrane transporter activity",
+      "id": "GO:0022857",
+      "depth": 1
+    },
+    {
+      "name": "transcription coregulator activity",
+      "id": "GO:0003712",
+      "depth": 1
+    },
+    {
+      "name": "ubiquitin-like protein transferase activity",
+      "id": "GO:0019787",
+      "depth": 2
+    },
+    {
+      "name": "protein folding chaperone",
+      "id": "GO:0044183",
+      "depth": 2
+    }
+  ],
+  "links": [
+    {
+      "source": 146,
+      "target": 30,
+      "value": 1,
+      "type": "part_of"
+    },
+    {
+      "source": 170,
+      "target": 131,
+      "value": 1,
+      "type": "is_a"
+    },
+    {
+      "source": 157,
+      "target": 89,
+      "value": 1,
+      "type": "is_a"
+    },
+    {
+      "source": 165,
+      "target": 98,
+      "value": 1,
+      "type": "is_a"
+    },
+    {
+      "source": 148,
+      "target": 52,
+      "value": 1,
+      "type": "part_of"
+    },
+    {
+      "source": 144,
+      "target": 11,
+      "value": 1,
+      "type": "part_of"
+    },
+    {
+      "source": 147,
+      "target": 48,
+      "value": 1,
+      "type": "is_a"
+    },
+    {
+      "source": 168,
+      "target": 128,
+      "value": 1,
+      "type": "part_of"
+    },
+    {
+      "source": 150,
+      "target": 88,
+      "value": 1,
+      "type": "is_a"
+    },
+    {
+      "source": 158,
+      "target": 89,
+      "value": 1,
+      "type": "is_a"
+    },
+    {
+      "source": 159,
+      "target": 89,
+      "value": 1,
+      "type": "is_a"
+    },
+    {
+      "source": 151,
+      "target": 88,
+      "value": 1,
+      "type": "is_a"
+    },
+    {
+      "source": 152,
+      "target": 88,
+      "value": 1,
+      "type": "is_a"
+    },
+    {
+      "source": 153,
+      "target": 88,
+      "value": 1,
+      "type": "is_a"
+    },
+    {
+      "source": 154,
+      "target": 88,
+      "value": 1,
+      "type": "is_a"
+    },
+    {
+      "source": 155,
+      "target": 88,
+      "value": 1,
+      "type": "is_a"
+    },
+    {
+      "source": 156,
+      "target": 88,
+      "value": 1,
+      "type": "is_a"
+    },
+    {
+      "source": 160,
+      "target": 89,
+      "value": 1,
+      "type": "is_a"
+    },
+    {
+      "source": 161,
+      "target": 89,
+      "value": 1,
+      "type": "is_a"
+    },
+    {
+      "source": 162,
+      "target": 89,
+      "value": 1,
+      "type": "is_a"
+    },
+    {
+      "source": 171,
+      "target": 152,
+      "value": 1,
+      "type": "is_a"
+    },
+    {
+      "source": 169,
+      "target": 129,
+      "value": 1,
+      "type": "part_of"
+    },
+    {
+      "source": 166,
+      "target": 100,
+      "value": 1,
+      "type": "is_a"
+    },
+    {
+      "source": 167,
+      "target": 31,
+      "value": 1,
+      "type": "is_a"
+    },
+    {
+      "source": 167,
+      "target": 102,
+      "value": 1,
+      "type": "part_of"
+    },
+    {
+      "source": 149,
+      "target": 86,
+      "value": 1,
+      "type": "part_of"
+    },
+    {
+      "source": 172,
+      "target": 168,
+      "value": 1,
+      "type": "part_of"
+    },
+    {
+      "source": 164,
+      "target": 93,
+      "value": 1,
+      "type": "is_a"
+    },
+    {
+      "source": 163,
+      "target": 89,
+      "value": 1,
+      "type": "is_a"
+    },
+    {
+      "source": 145,
+      "target": 29,
+      "value": 1,
+      "type": "part_of"
+    }
+  ]
+}

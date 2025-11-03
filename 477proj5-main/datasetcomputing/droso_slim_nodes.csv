@@ -1,0 +1,174 @@
+id,label,namespace,depth,index
+GO:0000278,mitotic cell cycle,biological_process,0,0
+GO:0000902,cell morphogenesis,biological_process,0,1
+GO:0002520,immune system development,biological_process,0,2
+GO:0003012,muscle system process,biological_process,0,3
+GO:0003677,DNA binding,molecular_function,0,4
+GO:0003682,chromatin binding,molecular_function,0,5
+GO:0003723,RNA binding,molecular_function,0,6
+GO:0003735,structural constituent of ribosome,molecular_function,0,7
+GO:0004518,nuclease activity,molecular_function,0,8
+GO:0005201,extracellular matrix structural constituent,molecular_function,0,9
+GO:0005615,extracellular space,cellular_component,0,10
+GO:0005634,nucleus,cellular_component,0,11
+GO:0005694,chromosome,cellular_component,0,12
+GO:0005739,mitochondrion,cellular_component,0,13
+GO:0005768,endosome,cellular_component,0,14
+GO:0005773,vacuole,cellular_component,0,15
+GO:0005777,peroxisome,cellular_component,0,16
+GO:0005783,endoplasmic reticulum,cellular_component,0,17
+GO:0005794,Golgi apparatus,cellular_component,0,18
+GO:0005829,cytosol,cellular_component,0,19
+GO:0005856,cytoskeleton,cellular_component,0,20
+GO:0005886,plasma membrane,cellular_component,0,21
+GO:0005929,cilium,cellular_component,0,22
+GO:0005975,carbohydrate metabolic process,biological_process,0,23
+GO:0006066,alcohol metabolic process,biological_process,0,24
+GO:0006090,pyruvate metabolic process,biological_process,0,25
+GO:0006091,generation of precursor metabolites and energy,biological_process,0,26
+GO:0006260,DNA replication,biological_process,0,27
+GO:0006310,DNA recombination,biological_process,0,28
+GO:0006351,DNA-templated transcription,biological_process,0,29
+GO:0006355,regulation of DNA-templated transcription,biological_process,0,30
+GO:0006396,RNA processing,biological_process,0,31
+GO:0006399,tRNA metabolic process,biological_process,0,32
+GO:0006403,RNA localization,biological_process,0,33
+GO:0006412,translation,biological_process,0,34
+GO:0006497,protein lipidation,biological_process,0,35
+GO:0006520,amino acid metabolic process,biological_process,0,36
+GO:0006575,modified amino acid metabolic process,biological_process,0,37
+GO:0006595,polyamine metabolic process,biological_process,0,38
+GO:0006629,lipid metabolic process,biological_process,0,39
+GO:0006744,ubiquinone biosynthetic process,biological_process,0,40
+GO:0006766,vitamin metabolic process,biological_process,0,41
+GO:0006790,sulfur compound metabolic process,biological_process,0,42
+GO:0006811,monoatomic ion transport,biological_process,0,43
+GO:0006839,mitochondrial transport,biological_process,0,44
+GO:0006869,lipid transport,biological_process,0,45
+GO:0006913,nucleocytoplasmic transport,biological_process,0,46
+GO:0006914,autophagy,biological_process,0,47
+GO:0006950,response to stress,biological_process,0,48
+GO:0006955,immune response,biological_process,0,49
+GO:0006997,nucleus organization,biological_process,0,50
+GO:0007005,mitochondrion organization,biological_process,0,51
+GO:0007010,cytoskeleton organization,biological_process,0,52
+GO:0007018,microtubule-based movement,biological_process,0,53
+GO:0007031,peroxisome organization,biological_process,0,54
+GO:0007033,vacuole organization,biological_process,0,55
+GO:0007059,chromosome segregation,biological_process,0,56
+GO:0007155,cell adhesion,biological_process,0,57
+GO:0007163,establishment or maintenance of cell polarity,biological_process,0,58
+GO:0007166,cell surface receptor signaling pathway,biological_process,0,59
+GO:0007186,G protein-coupled receptor signaling pathway,biological_process,0,60
+GO:0007369,gastrulation,biological_process,0,61
+GO:0007389,pattern specification process,biological_process,0,62
+GO:0007399,nervous system development,biological_process,0,63
+GO:0007423,sensory organ development,biological_process,0,64
+GO:0007431,salivary gland development,biological_process,0,65
+GO:0007498,mesoderm development,biological_process,0,66
+GO:0007600,sensory perception,biological_process,0,67
+GO:0007623,circadian rhythm,biological_process,0,68
+GO:0007626,locomotory behavior,biological_process,0,69
+GO:0008061,chitin binding,molecular_function,0,70
+GO:0008092,cytoskeletal protein binding,molecular_function,0,71
+GO:0008104,intracellular protein localization,biological_process,0,72
+GO:0008134,transcription factor binding,molecular_function,0,73
+GO:0008283,cell population proliferation,biological_process,0,74
+GO:0008289,lipid binding,molecular_function,0,75
+GO:0009100,glycoprotein metabolic process,biological_process,0,76
+GO:0009605,response to external stimulus,biological_process,0,77
+GO:0010256,endomembrane system organization,biological_process,0,78
+GO:0010586,miRNA metabolic process,biological_process,0,79
+GO:0012501,programmed cell death,biological_process,0,80
+GO:0016049,cell growth,biological_process,0,81
+GO:0016071,mRNA metabolic process,biological_process,0,82
+GO:0016072,rRNA metabolic process,biological_process,0,83
+GO:0016073,snRNA metabolic process,biological_process,0,84
+GO:0016074,sno(s)RNA metabolic process,biological_process,0,85
+GO:0016192,vesicle-mediated transport,biological_process,0,86
+GO:0016491,oxidoreductase activity,molecular_function,0,87
+GO:0016740,transferase activity,molecular_function,0,88
+GO:0016787,hydrolase activity,molecular_function,0,89
+GO:0016829,lyase activity,molecular_function,0,90
+GO:0016853,isomerase activity,molecular_function,0,91
+GO:0016874,ligase activity,molecular_function,0,92
+GO:0030054,cell junction,cellular_component,0,93
+GO:0030135,coated vesicle,cellular_component,0,94
+GO:0030154,cell differentiation,biological_process,0,95
+GO:0030163,protein catabolic process,biological_process,0,96
+GO:0030198,extracellular matrix organization,biological_process,0,97
+GO:0030234,enzyme regulator activity,molecular_function,0,98
+GO:0030246,carbohydrate binding,molecular_function,0,99
+GO:0030312,external encapsulating structure,cellular_component,0,100
+GO:0030705,cytoskeleton-dependent intracellular transport,biological_process,0,101
+GO:0031047,regulatory ncRNA-mediated gene silencing,biological_process,0,102
+GO:0031386,protein tag activity,molecular_function,0,103
+GO:0035556,intracellular signal transduction,biological_process,0,104
+GO:0038023,signaling receptor activity,molecular_function,0,105
+GO:0042221,response to chemical,biological_process,0,106
+GO:0042254,ribosome biogenesis,biological_process,0,107
+GO:0042302,structural constituent of cuticle,molecular_function,0,108
+GO:0042303,molting cycle,biological_process,0,109
+GO:0042335,cuticle development,biological_process,0,110
+GO:0042393,histone binding,molecular_function,0,111
+GO:0042440,pigment metabolic process,biological_process,0,112
+GO:0044703,multi-organism reproductive process,biological_process,0,113
+GO:0044782,cilium organization,biological_process,0,114
+GO:0045182,translation regulator activity,molecular_function,0,115
+GO:0045454,cell redox homeostasis,biological_process,0,116
+GO:0046872,metal ion binding,molecular_function,0,117
+GO:0048018,receptor ligand activity,molecular_function,0,118
+GO:0048609,multicellular organismal reproductive process,biological_process,0,119
+GO:0048870,cell motility,biological_process,0,120
+GO:0048878,chemical homeostasis,biological_process,0,121
+GO:0050808,synapse organization,biological_process,0,122
+GO:0050890,cognition,biological_process,0,123
+GO:0051082,unfolded protein binding,molecular_function,0,124
+GO:0051276,chromosome organization,biological_process,0,125
+GO:0051301,cell division,biological_process,0,126
+GO:0051321,meiotic cell cycle,biological_process,0,127
+GO:0051604,protein maturation,biological_process,0,128
+GO:0055085,transmembrane transport,biological_process,0,129
+GO:0055086,nucleobase-containing small molecule metabolic process,biological_process,0,130
+GO:0060090,molecular adaptor activity,molecular_function,0,131
+GO:0060429,epithelium development,biological_process,0,132
+GO:0060541,respiratory system development,biological_process,0,133
+GO:0061024,membrane organization,biological_process,0,134
+GO:0061061,muscle structure development,biological_process,0,135
+GO:0065003,protein-containing complex assembly,biological_process,0,136
+GO:0070647,protein modification by small protein conjugation or removal,biological_process,0,137
+GO:0072359,circulatory system development,biological_process,0,138
+GO:0099503,secretory vesicle,cellular_component,0,139
+GO:0099536,synaptic signaling,biological_process,0,140
+GO:0140299,molecular sensor activity,molecular_function,0,141
+GO:0140313,molecular sequestering activity,molecular_function,0,142
+GO:0140657,ATP-dependent activity,molecular_function,0,143
+GO:0005730,nucleolus,cellular_component,1,144
+GO:0140223,general transcription initiation factor activity,molecular_function,1,145
+GO:0003700,DNA-binding transcription factor activity,molecular_function,1,146
+GO:0006281,DNA repair,biological_process,1,147
+GO:0005200,structural constituent of cytoskeleton,molecular_function,1,148
+GO:0038024,cargo receptor activity,molecular_function,1,149
+GO:0008168,methyltransferase activity,molecular_function,1,150
+GO:0016301,kinase activity,molecular_function,1,151
+GO:0016746,acyltransferase activity,molecular_function,1,152
+GO:0016757,glycosyltransferase activity,molecular_function,1,153
+GO:0016765,"transferase activity, transferring alkyl or aryl (other than methyl) groups",molecular_function,1,154
+GO:0016773,"phosphotransferase activity, alcohol group as acceptor",molecular_function,1,155
+GO:0016779,nucleotidyltransferase activity,molecular_function,1,156
+GO:0003924,GTPase activity,molecular_function,1,157
+GO:0008233,peptidase activity,molecular_function,1,158
+GO:0016298,lipase activity,molecular_function,1,159
+GO:0016791,phosphatase activity,molecular_function,1,160
+GO:0016798,"hydrolase activity, acting on glycosyl bonds",molecular_function,1,161
+GO:0016810,"hydrolase activity, acting on carbon-nitrogen (but not peptide) bonds",molecular_function,1,162
+GO:0052689,carboxylic ester hydrolase activity,molecular_function,1,163
+GO:0045202,synapse,cellular_component,1,164
+GO:0005085,guanyl-nucleotide exchange factor activity,molecular_function,1,165
+GO:0031012,extracellular matrix,cellular_component,1,166
+GO:0034587,piRNA processing,biological_process,1,167
+GO:0006457,protein folding,biological_process,1,168
+GO:0022857,transmembrane transporter activity,molecular_function,1,169
+GO:0003712,transcription coregulator activity,molecular_function,1,170
+GO:0019787,ubiquitin-like protein transferase activity,molecular_function,2,171
+GO:0044183,protein folding chaperone,molecular_function,2,172
