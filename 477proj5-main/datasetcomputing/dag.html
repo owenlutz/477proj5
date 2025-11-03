@@ -1,0 +1,264 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>GO Slim — DAG (ancestry + expand)</title>
+<style>
+  body { font-family: ui-sans-serif, system-ui; margin: 12px; }
+  .controls { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-bottom:8px; }
+  input[type="search"] { padding:6px 10px; min-width:320px; }
+  label { font-size: 13px; }
+  .hint { font-size:12px; color:#555; margin: 4px 0 10px; }
+  svg { background: #fff; border: 1px solid #eee; }
+  .link { fill:none; stroke:#999; stroke-opacity:.5; }
+  .link.part_of { stroke-dasharray:3,3; }
+  .node circle { fill:#333; r:4; }
+  .node.root circle { fill:#0b7285; }
+  .node text { font-size:10px; dominant-baseline: middle; }
+  .dim { opacity: .15; }
+  .hi { stroke:#000 !important; stroke-opacity:1 !important; }
+  .hi-node circle { fill:#000 !important; }
+  .msg { margin: 8px 0; color:#a00; font-size:13px; }
+</style>
+
+<div class="controls">
+  <input id="q" type="search" placeholder="Search label or GO ID (e.g., 'mitotic', 'GO:0000278')" />
+  <label><input id="anc" type="checkbox" checked> ancestors</label>
+  <label><input id="des" type="checkbox" checked> descendants</label>
+  <label>depth <input id="depth" type="range" min="0" max="8" value="3"> <span id="depthv">3</span></label>
+  <button id="reset">Reset</button>
+</div>
+<div class="hint">
+  Tip: search selects a node and shows its ancestor/descendant neighborhood to the chosen depth. Click a node to refocus; click the background to reset.
+</div>
+<div id="msg" class="msg" style="display:none;"></div>
+<svg id="viz" width="1200" height="800"></svg>
+
+<script type="module">
+import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
+import {
+  dagStratify, sugiyama,
+  layeringLongestPath, decrossTwoLayer, coordCenter
+} from "https://cdn.jsdelivr.net/npm/d3-dag@1/+esm";
+
+// ======== CONFIG ========
+const FILE = "go_out_arc.json"; // change to your actual file name
+
+// ======== LOAD & NORMALIZE ========
+let raw;
+try {
+  raw = await fetch(FILE).then(r => {
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    return r.json();
+  });
+} catch (e) {
+  showMsg(`Failed to load ${FILE}: ${e}`);
+  throw e;
+}
+
+// Accept either arc.json or sankey.json
+let nodes = [];
+let links = [];
+
+if (Array.isArray(raw.nodes) && Array.isArray(raw.links)) {
+  // detect sankey numeric indices
+  const sankeyStyle = typeof raw.links[0]?.source === "number" || typeof raw.links[0]?.target === "number";
+  if (sankeyStyle) {
+    // Convert numeric indices -> ids
+    // Expect raw.nodes[*] to have .id (from the Python script) or fallback to .name
+    const idOf = (i) => (raw.nodes[i]?.id || raw.nodes[i]?.name);
+    nodes = raw.nodes.map(n => ({ id: n.id || n.name, label: n.name || n.id }));
+    links = raw.links.map(e => ({
+      source: idOf(e.source),
+      target: idOf(e.target),
+      type: e.type || "is_a"
+    }));
+  } else {
+    // arc-style already uses id strings in links
+    nodes = raw.nodes.map(n => ({ id: n.id, label: n.label || n.id }));
+    links = raw.links.map(e => ({ source: e.source, target: e.target, type: e.type || "is_a" }));
+  }
+} else {
+  showMsg("JSON is not in expected format (missing nodes/links).");
+}
+
+console.log("Loaded:", { nodeCount: nodes.length, linkCount: links.length, exampleNode: nodes[0], exampleLink: links[0] });
+
+if (!nodes.length) {
+  showMsg("No nodes found after parsing. Check FILE name and JSON structure.");
+}
+
+const idToNode = new Map(nodes.map(n => [n.id, n]));
+
+// prune links whose endpoints are missing
+links = links.filter(l => idToNode.has(l.source) && idToNode.has(l.target));
+console.log("After pruning:", { linkCount: links.length });
+
+if (!links.length && !nodes.length) {
+  showMsg("No nodes/links to display.");
+}
+
+// Build parent/child adjacency
+const parents = new Map(nodes.map(n => [n.id, new Set()]));
+const children = new Map(nodes.map(n => [n.id, new Set()]));
+const rel = new Map();
+for (const e of links) {
+  parents.get(e.source)?.add(e.target);
+  children.get(e.target)?.add(e.source);
+  rel.set(`${e.source}→${e.target}`, e.type);
+}
+
+// ======== UI WIRING ========
+const input = document.getElementById("q");
+const ckAnc = document.getElementById("anc");
+const ckDes = document.getElementById("des");
+const rngDepth = document.getElementById("depth");
+const depthVal = document.getElementById("depthv");
+depthVal.textContent = rngDepth.value;
+rngDepth.addEventListener("input", () => (depthVal.textContent = rngDepth.value));
+document.getElementById("reset").addEventListener("click", () => { focusId = null; render(); });
+
+const svg = d3.select("#viz");
+const W = +svg.attr("width"), H = +svg.attr("height");
+const M = {top: 30, right: 20, bottom: 20, left: 20};
+const g = svg.append("g").attr("transform", `translate(${M.left},${M.top})`);
+const innerW = W - M.left - M.right;
+const innerH = H - M.top - M.bottom;
+
+// Background click clears
+svg.on("click", (e) => { if (e.target === svg.node()) { focusId = null; render(); } });
+
+const allIds = new Set(nodes.map(n => n.id));
+let focusId = null;
+
+// ======== LAYOUT & RENDER ========
+function layoutAndDraw(keepIds) {
+  const keep = [...keepIds];
+  if (!keep.length) {
+    g.selectAll("*").remove();
+    showMsg("Nothing to render with current filters.");
+    return;
+  }
+  hideMsg();
+
+  // Build stratify array: {id, parentIds: [...]}
+  const data = keep.map(id => ({
+    id,
+    parentIds: [...(parents.get(id) || [])].filter(p => keepIds.has(p))
+  }));
+
+  // If *everyone* has parentIds=[], d3-dag still draws isolated nodes; that’s okay.
+  const dag = dagStratify()(data);
+
+  const lay = sugiyama()
+    .size([innerW, innerH])
+    .layering(layeringLongestPath())
+    .decross(decrossTwoLayer())
+    .coord(coordCenter());
+  lay(dag);
+
+  const line = d3.line().curve(d3.curveCatmullRom);
+
+  const drawLinks = dag.links().map(L => ({
+    points: L.points.map(p => [p.x, p.y]),
+    source: L.source.data.id,
+    target: L.target.data.id,
+    type: rel.get(`${L.source.data.id}→${L.target.data.id}`) || "is_a"
+  }));
+
+  g.selectAll("*").remove();
+
+  const linkSel = g.append("g").selectAll("path").data(drawLinks).join("path")
+    .attr("class", d => `link ${d.type === "part_of" ? "part_of" : ""}`)
+    .attr("d", d => line(d.points))
+    .attr("stroke-width", d => d.type === "part_of" ? 1.5 : 1.1);
+
+  const nodeSel = g.append("g").selectAll("g.node")
+    .data([...dag].map(n => ({ id: n.data.id, x: n.x, y: n.y })))
+    .join("g")
+    .attr("class", d => `node ${parents.get(d.id)?.size ? "" : "root"}`)
+    .attr("transform", d => `translate(${d.x},${d.y})`)
+    .on("click", (e, d) => { e.stopPropagation(); focusId = d.id; render(); });
+
+  nodeSel.append("circle").attr("r", 4)
+    .append("title").text(d => `${idToNode.get(d.id)?.label || d.id} (${d.id})`);
+
+  nodeSel.append("text")
+    .attr("x", 6).attr("y", 0)
+    .text(d => idToNode.get(d.id)?.label || d.id);
+
+  // highlight neighborhood if focused
+  if (focusId) {
+    const { nodeSet, edgeSet } = collectNeighborhood(focusId, ckAnc.checked, ckDes.checked, +rngDepth.value);
+    nodeSel.classed("dim", d => !nodeSet.has(d.id)).classed("hi-node", d => nodeSet.has(d.id));
+    linkSel.classed("dim", d => !edgeSet.has(`${d.source}→${d.target}`)).classed("hi", d => edgeSet.has(`${d.source}→${d.target}`));
+  }
+}
+
+function collectNeighborhood(id, wantAnc, wantDes, maxDepth) {
+  const nodeSet = new Set([id]);
+  const edgeSet = new Set();
+  if (wantAnc) {
+    const q = [[id,0]], seen = new Set([id]);
+    while (q.length) {
+      const [u,d] = q.shift();
+      if (d >= maxDepth) continue;
+      for (const p of (parents.get(u) || [])) {
+        edgeSet.add(`${u}→${p}`);
+        if (!seen.has(p)) { seen.add(p); nodeSet.add(p); q.push([p,d+1]); }
+      }
+    }
+  }
+  if (wantDes) {
+    const q = [[id,0]], seen = new Set([id]);
+    while (q.length) {
+      const [u,d] = q.shift();
+      if (d >= maxDepth) continue;
+      for (const c of (children.get(u) || [])) {
+        edgeSet.add(`${c}→${u}`);
+        if (!seen.has(c)) { seen.add(c); nodeSet.add(c); q.push([c,d+1]); }
+      }
+    }
+  }
+  return { nodeSet, edgeSet };
+}
+
+function findNode(query) {
+  const q = query.trim().toLowerCase();
+  if (!q) return null;
+  if (idToNode.has(query)) return query;
+  if (/go[_:]\d{7}/i.test(q)) {
+    const canon = "GO:" + q.replace(/[^0-9]/g, "").padStart(7, "0");
+    if (idToNode.has(canon)) return canon;
+  }
+  for (const n of nodes) {
+    if ((n.label || "").toLowerCase().includes(q)) return n.id;
+  }
+  return null;
+}
+
+document.getElementById("depth").addEventListener("change", render);
+document.getElementById("anc").addEventListener("change", render);
+document.getElementById("des").addEventListener("change", render);
+document.getElementById("q").addEventListener("keydown", e => {
+  if (e.key === "Enter") {
+    const found = findNode(e.target.value);
+    if (found) { focusId = found; render(); }
+    else showMsg("No match. Try a GO ID like GO:0000278 or a label fragment.");
+  }
+});
+
+function render() {
+  const keepIds = focusId
+    ? collectNeighborhood(focusId, document.getElementById("anc").checked, document.getElementById("des").checked, +document.getElementById("depth").value).nodeSet
+    : new Set(nodes.map(n => n.id));
+  layoutAndDraw(keepIds);
+}
+
+function showMsg(t) {
+  const el = document.getElementById("msg");
+  el.textContent = t;
+  el.style.display = "block";
+}
+function hideMsg() { const el = document.getElementById("msg"); el.style.display = "none"; }
+
+render();
+</script>

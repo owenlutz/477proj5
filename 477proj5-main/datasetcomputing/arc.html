@@ -1,0 +1,99 @@
+<!doctype html>
+<meta charset="utf-8" />
+<body style="font-family:sans-serif;">
+<svg id="viz" width="1100" height="600"></svg>
+
+<script type="module">
+import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
+
+// 1. Load your generated JSON
+const data = await fetch("droso_slim_arc.json").then(r => r.json());
+
+// 2. Layout variables
+const W = 1100, H = 600;
+const margin = {top: 40, right: 20, bottom: 80, left: 20};
+const baselineY = H - margin.bottom;
+
+// sort nodes by precomputed index or depth
+const nodes = data.nodes.sort((a,b)=>d3.ascending(a.index,b.index));
+const idToNode = new Map(nodes.map(n => [n.id, n]));
+const order = nodes.map(d => d.id);
+const x = d3.scalePoint(order, [margin.left, W - margin.right]).padding(0.5);
+
+// 3. Prepare links (ensure source/target indices)
+const links = data.links
+  .filter(l => idToNode.has(l.source) && idToNode.has(l.target))
+  .map(l => ({
+    source: idToNode.get(l.source),
+    target: idToNode.get(l.target),
+    type: l.type
+  }));
+
+// 4. SVG setup
+const svg = d3.select("#viz");
+svg.append("line")
+   .attr("x1", margin.left).attr("x2", W - margin.right)
+   .attr("y1", baselineY).attr("y2", baselineY)
+   .attr("stroke", "#999");
+
+// 5. Arc path helper
+function arcPath(x1, x2, y) {
+  const r = Math.max(1, (x2 - x1)/2);
+  return `M${x1},${y} A${r},${r} 0 0 1 ${x2},${y}`;
+}
+
+// 6. Draw arcs
+const gArcs = svg.append("g").attr("fill","none").attr("stroke","#999").attr("stroke-opacity",0.6);
+
+const arcSel = gArcs.selectAll("path")
+  .data(links)
+  .join("path")
+  .attr("d", d => {
+    const x1 = x(d.source.id);
+    const x2 = x(d.target.id);
+    return arcPath(x1, x2, baselineY);
+  })
+  .attr("stroke-width", d => d.type === "part_of" ? 1.5 : 1)
+  .attr("stroke-dasharray", d => d.type === "part_of" ? "3,3" : null);
+
+// 7. Draw nodes
+const gNodes = svg.append("g").attr("fill","#333");
+
+const nodeSel = gNodes.selectAll("circle")
+  .data(nodes)
+  .join("circle")
+  .attr("cx", d => x(d.id))
+  .attr("cy", baselineY)
+  .attr("r", 4)
+  .on("mouseover", highlight)
+  .on("mouseout", clearHighlight);
+
+// 8. Labels
+svg.append("g")
+  .selectAll("text")
+  .data(nodes)
+  .join("text")
+  .attr("x", d => x(d.id))
+  .attr("y", baselineY + 14)
+  .attr("text-anchor","middle")
+  .attr("font-size",10)
+  .text(d => d.label);
+
+// 9. Highlight on hover
+function highlight(event, d) {
+  arcSel.attr("stroke", l =>
+    (l.source.id === d.id || l.target.id === d.id) ? "#000" : "#ccc"
+  ).attr("stroke-opacity", l =>
+    (l.source.id === d.id || l.target.id === d.id) ? 1 : 0.3
+  );
+  nodeSel.attr("fill", n =>
+    (n.id === d.id) ? "#000" : "#666"
+  );
+}
+
+function clearHighlight() {
+  arcSel.attr("stroke","#999").attr("stroke-opacity",0.6);
+  nodeSel.attr("fill","#333");
+}
+</script>
+</body>
